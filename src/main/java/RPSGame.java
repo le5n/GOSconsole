@@ -4,22 +4,26 @@ import java.util.Scanner;
 public class RPSGame {
     private static final int AMOUNT = 3;
 
-    void play() {
+    int playRSP() {
         Scanner in = new Scanner(System.in);
-        int i;
+        int result;
         do {
             System.out.print("Enter the element: ");
             String element = in.nextLine();
-            i = getResult(element);
+            result = getResult(element);
+            System.out.println(writeResult(result));
         }
-        while (i == 0);
-        System.out.println(i);
+        while (result == 0);
+
+        return result;
     }
 
-  private int getResult(String userElement) {
+
+    private int getResult(String userElement) {
         RPSElements inputElement = convertInputElement(userElement);
         RPSElements generatedElement = getElement();
-        System.out.println(generatedElement);
+        System.out.println("Computer played: " + generatedElement);
+
         if (inputElement == generatedElement) {
             return 0;
         }
@@ -56,5 +60,17 @@ public class RPSGame {
         Random random = new Random();
         RPSElements[] elements = new RPSElements[]{RPSElements.PAPER, RPSElements.ROCK, RPSElements.SCISSORS};
         return elements[random.nextInt(AMOUNT)];
+    }
+
+    String writeResult(int result) {
+        switch (result) {
+            case 1:
+                return "you play first";
+            case 0:
+                return "no one wins, go on with RPS";
+            case -1:
+                return "you play second";
+        }
+        return "smt is wrong";
     }
 }
