@@ -1,17 +1,13 @@
-public enum RCPElements {
+public enum RPSElements {
     ROCK("Rock"), PAPER("Paper"), SCISSORS("Scissors");
     String name;
 
-    RCPElements(String name) {
+    RPSElements(String name) {
         this.name = name;
     }
 
     @Override
     public String toString() {
-        return name;
-    }
-
-    public String getName() {
         return name;
     }
 }
