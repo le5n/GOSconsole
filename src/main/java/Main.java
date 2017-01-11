@@ -1,3 +1,6 @@
+import RPS.RPSGame;
+import skate.SkateGame;
+
 public class Main {
     public static void main(String[] args) {
         RPSGame rpsGame = new RPSGame();
@@ -5,5 +8,6 @@ public class Main {
 
        int RPSResult = rpsGame.playRSP();
         skateGame.setDifficulty();
+        skateGame.playSkate();
     }
 }

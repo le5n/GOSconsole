@@ -1,10 +1,13 @@
+package RPS;
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class RPSGame {
     private static final int AMOUNT = 3;
+    private static boolean computerFirst;
 
-    int playRSP() {
+    public int playRSP() {
         Scanner in = new Scanner(System.in);
         int result;
         do {
@@ -64,13 +67,26 @@ public class RPSGame {
 
     String writeResult(int result) {
         switch (result) {
-            case 1:
+            case 1: {
+                computerFirst = false;
+                System.out.println(computerFirst + " comp first");
                 return "you play first";
-            case 0:
+            }
+            case 0: {
+                computerFirst = false;
+                System.out.println(computerFirst + " comp first");
                 return "no one wins, go on with RPS";
-            case -1:
+            }
+            case -1: {
+                computerFirst = true;
+                System.out.println(computerFirst + " comp first");
                 return "you play second";
+            }
         }
         return "smt is wrong";
+    }
+
+    public static boolean isComputerFirst() {
+        return computerFirst;
     }
 }

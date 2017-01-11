@@ -1,3 +1,5 @@
+package RPS;
+
 public enum RPSElements {
     ROCK("Rock"), PAPER("Paper"), SCISSORS("Scissors");
     String name;
